@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'HoltwoodOneSC';
+    src: url('../font/HoltwoodOneSC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumGothic';
+    src: url('../font/NanumGothic.otf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contact-wrapper {
+    width: 100%;
+    height: 970px;
+    background-color: #FFF9E6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 제목 */
+#title {
+    font-family: 'HoltwoodOneSC', sans-serif;
+    font-size: 128px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+}
+
+/* 메인 내용 (프로필 + 정보) */
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    gap: 120px;
+}
+
+.profile-circle {
+    width: 250px;
+    height: 300px;
+    /* 기존 그대로 */
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* 이미지 위쪽 기준 */
+
+    /* 회전 애니메이션 준비 */
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    /* 3D 회전 가능 */
+    perspective: 800px;
+    /* 3D 느낌 */
+}
+
+/* hover 시 한 바퀴 회전 */
+.profile-circle:hover {
+    transform: rotateY(360deg);
+}
+
+.profile-circle img {
+    width: 150%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-radius: 50%;
+    transform: translate(10px, -20px);
+    transition: transform 1s ease-in-out;
+    /* 이미지 위치 변화 부드럽게 */
+}
+
+
+
+/* 오른쪽 정보 */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: 'NanumGothic';
+    color: #6b4b3e;
+    font-size: 32px;
+}
+
+.phonecall {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon {
+    font-size: 36px;
+}
+
+.qr-image {
+    width: 90px;
+    height: 90px;
+    margin-left: 20px;
+}
+
+/* 하단 문구 */
+.footer-text {
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'NanumGothic';
+    font-size: 24px;
+    color: #6b4b3e;
+    line-height: 1.6;
+}
+
+/* 카카오 QR */
+/* ✅ QR 이미지 크기 조정 */
+.info-item img {
+    width: 100px;
+    /* 기존보다 작게 */
+    height: 100px;
+    margin-left: 20px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.bottom-space {
+    height: 130px;
+    /* 원하는 높이 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* 좌우 텍스트 양 끝 배치 */
+    align-items: flex-start;
+    /* 상단 기준 정렬 */
+    position: relative;
+    padding: 0 50px;
+    /* 좌우 여백 */
+    box-sizing: border-box;
+    background-color: #60493A;
+    margin-top: 90px;
+}
+
+/* 좌/우 텍스트 */
+.bottom-left,
+.bottom-right {
+    font-family: 'NanumGothic', sans-serif;
+    font-size: 16px;
+    color: #FFF9E6;
+    align-self: center;
+    /* 박스 상단 기준 세로 중앙 */
+
+    margin: 0 250px;
+    /* 좌우 텍스트끼리 가까워짐 */
+}
+
+/* Top 버튼 */
+.top-button {
+    position: absolute;
+    top: 50%;
+    /* 박스 상단 기준 세로 중앙 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    border: none;
+    background-color: #FFF9E6;
+    color: #60493A;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* 아이콘 위, 텍스트 아래 */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.top-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* 버튼 안 텍스트 */
+.top-button .top-text {
+    font-size: 12px;
+    margin-top: 4px;
+    font-family: 'NanumGothic', sans-serif;
+}

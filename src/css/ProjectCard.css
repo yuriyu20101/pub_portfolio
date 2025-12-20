@@ -508,3 +508,20 @@
     top: 60px;
     /* 원하는 만큼 아래로 내리기 */
 }
+
+
+
+/* downloads 버튼 스타일 */
+
+.project-link-btn.download-btn {
+    background: #60493A;
+    border: 1px solid #60493A;
+    color: #FFF9E6;
+}
+
+.project-link-btn.download-btn:hover {
+    background: #FFF9E6;
+    border: 1px solid #60493A;
+    color: #60493A;
+    transform: translateY(-2px);
+}

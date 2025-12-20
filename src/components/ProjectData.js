@@ -77,7 +77,7 @@ export const projectData = [
         links: [
             { label: "메인", url: "https://yuriyuri01.github.io/woori/" },
 
-        ],
+        ]
     },
 
     {
@@ -172,6 +172,13 @@ PHP 서버는 MySQL 데이터베이스에 접속하여 사용자가 입력한 �
             { label: "더보기", url: "http://teama.dothome.co.kr/#/add" },
             { label: "마이페이지", url: "http://teama.dothome.co.kr/#/ProfilePage" },
         ],
+
+        downloads: [
+            {
+                label: "기획안",
+                url: "https://drive.google.com/uc?export=download&id=1e9zYUVEmmxJQq_Ta9wtOkkX33Jr_YKTJ"
+            },
+        ]
     },
 
     {
@@ -215,6 +222,13 @@ PHP 서버는 MySQL 데이터베이스에 접속하여 사용자가 입력한 �
             { label: "문의하기", url: "https://yuriyuri01.github.io/pina/qna" },
             { label: "마이페이지", url: "https://yuriyuri01.github.io/pina/mypage" },
         ],
+
+        downloads: [
+            {
+                label: "기획안",
+                url: "https://drive.google.com/uc?export=download&id=1VdskQxJFg5JfJQKaMOwvDgEMjcOsdJBt"
+            },
+        ]
     },
 
     {
@@ -274,5 +288,13 @@ PHP 서버는 MySQL 데이터베이스에 접속하여 사용자가 입력한 �
             { label: "챗봇/캘린더", url: "https://vercel-gaon.vercel.app/" },
             { label: "매칭테스트", url: "https://vercel-gaon.vercel.app/match" },
         ],
+
+
+        downloads: [
+            {
+                label: "기획안",
+                url: "https://drive.google.com/uc?export=download&id=1gpKwRx0yx-BWG5n-dJj44kkf8za7cFhL"
+            },
+        ]
     },
 ];

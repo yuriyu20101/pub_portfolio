@@ -28,12 +28,12 @@ function ProjectCard({ project }) {
       </div>
       <img src={project.frameImage} alt="PC frame" className="frame-image" />
 
-      {/* id:1,2,4 전용 버튼 (PC용) */}
-      {project.links && [1, 2, 4].includes(project.id) && (
+      {/* ✅ 공통 버튼 (PC 프레임용, id:5 제외) */}
+      {project.id !== 5 && (project.links || project.downloads) && (
         <div className={`project-links id-${project.id}`}>
-          {project.links.map((link, i) => (
+          {project.links?.map((link, i) => (
             <a
-              key={i}
+              key={`link-${i}`}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -42,8 +42,20 @@ function ProjectCard({ project }) {
               {link.label}
             </a>
           ))}
+
+          {project.downloads?.map((file, i) => (
+            <a
+              key={`download-${i}`}
+              href={file.url}
+              download
+              className="project-link-btn download-btn"
+            >
+              {file.label}
+            </a>
+          ))}
         </div>
       )}
+
     </div>
   );
 
@@ -55,9 +67,8 @@ function ProjectCard({ project }) {
       {/* 모바일 전용 프레임 */}
       {project.isMobile && (
         <div
-          className={`project-image mobile-frame ${
-            project.id === 5 ? "id-5" : ""
-          }`}
+          className={`project-image mobile-frame ${project.id === 5 ? "id-5" : ""
+            }`}
         >
           {/* id:3 모바일 프레임 위 기능 표시 */}
           {project.id === 3 && frameFeatureMap[project.id] && (
@@ -82,7 +93,7 @@ function ProjectCard({ project }) {
             <div className="project-links mobile id-3">
               {project.links.map((link, i) => (
                 <a
-                  key={i}
+                  key={`link-${i}`}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -91,17 +102,29 @@ function ProjectCard({ project }) {
                   {link.label}
                 </a>
               ))}
+
+              {/* ✅ 기획안 버튼 추가 (구조 안 깨짐) */}
+              {project.downloads?.map((file, i) => (
+                <a
+                  key={`download-${i}`}
+                  href={file.url}
+                  download
+                  className="project-link-btn download-btn"
+                >
+                  {file.label}
+                </a>
+              ))}
             </div>
           )}
+
         </div>
       )}
 
       {/* 모바일 화면 (id:5용) */}
       {project.screens?.mobile && (
         <div
-          className={`project-image mobile-frame pc-overlay ${
-            project.id === 5 ? "id-5" : ""
-          }`}
+          className={`project-image mobile-frame pc-overlay ${project.id === 5 ? "id-5" : ""
+            }`}
         >
           <div className="image-wrapper">
             <img
@@ -121,9 +144,8 @@ function ProjectCard({ project }) {
       {/* 태블릿 화면 (id:5용) */}
       {project.screens?.tablet && (
         <div
-          className={`project-image tablet-frame ${
-            project.id === 5 ? "pc-overlay id-5" : ""
-          }`}
+          className={`project-image tablet-frame ${project.id === 5 ? "pc-overlay id-5" : ""
+            }`}
         >
           <div className="inner-box">
             <img
@@ -164,6 +186,17 @@ function ProjectCard({ project }) {
                 className="project-link-btn"
               >
                 {link.label}
+              </a>
+            ))}
+
+            {project.downloads?.map((file, i) => (
+              <a
+                key={`download-${i}`}
+                href={file.url}
+                download
+                className="project-link-btn download-btn"
+              >
+                {file.label}
               </a>
             ))}
           </div>

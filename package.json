@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "homepage": " https://yuriyu20101.github.io/portfolio/",
+  "homepage": "https://yuriyu20101.github.io/pub_portfolio/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

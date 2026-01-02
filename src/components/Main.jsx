@@ -17,7 +17,7 @@ function Main() {
           <img src={ProfilePhoto} alt="프로필 사진" />
         </div>
         <div className="side-text">
-          UIUX 웹디자이너
+          UI/UX 웹퍼블리셔
           <br /> 장유리입니다.
         </div>
       </div>
